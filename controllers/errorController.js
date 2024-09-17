@@ -63,7 +63,7 @@ const sendErrorProd = (err, req, res) => {
     });
   }
   if (err.isOperational) {
-    console.log(err.message);
+    // console.log(err.message);
     //A) Operational, trusted error: send message to client
     return res.status(err.statusCode).render('error', {
       title: 'Something went wrong',
@@ -86,8 +86,8 @@ module.exports = (err, req, res, next) => {
   err.status = err.status || 'error';
 
   if (process.env.NODE_ENV === 'development') {
-    console.log(err);
-    console.log(err.name);
+    // console.log(err);
+    // console.log(err.name);
     sendErrorDev(err, req, res);
   } else if (process.env.NODE_ENV === 'production') {
     let error = { ...err, name: err.name };

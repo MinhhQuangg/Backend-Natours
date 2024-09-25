@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "start:prod": "$env:NODE_ENV='production'; nodemon server.js",
-    "debug": "ndb server.js"
+    "start:prod": "$env:NODE_ENV='production' nodemon server.js",
+    "debug": "ndb server.js",
+    "build": "parcel build ./public/js/index.js --out-dir ./public/js --public-url ./ --out-file bundle.js"
   },
   "author": "Minh Lieu",
   "license": "ISC",
@@ -41,6 +42,7 @@
     "tough-cookie": "^5.0.0",
     "uuid": "^10.0.0",
     "validator": "^13.12.0",
+    "webpack": "^5.94.0",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {

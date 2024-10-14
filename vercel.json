@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/js/index.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public/js"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/js/(.*)",
+      "dest": "/public/js/bundle.js"
+    }
+  ]
+}
